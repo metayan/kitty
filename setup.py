@@ -1588,7 +1588,7 @@ def macos_info_plist() -> bytes:
         NSHumanReadableCopyright=time.strftime('Copyright %Y, Kovid Goyal'),
         CFBundleGetInfoString='kitty - The fast, feature-rich, GPU based terminal emulator. https://sw.kovidgoyal.net/kitty/',
         # Operating System Version
-        LSMinimumSystemVersion='11.0.0',
+        LSMinimumSystemVersion='10.15.7',
         # Categorization
         CFBundlePackageType='APPL',
         CFBundleSignature='????',

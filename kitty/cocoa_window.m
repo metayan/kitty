@@ -1174,7 +1174,9 @@ bundle_image_as_png(PyObject *self UNUSED, PyObject *args, PyObject *kw) {@autor
             return render_emoji(@(b), image_size, output_path);
         default:
             if (@available(macOS 11.0, *)) {
+#if (MAC_OS_X_VERSION_MIN_REQUIRED >= 110000)
                 icon = [NSImage imageWithSystemSymbolName:@(b) accessibilityDescription:@""];  // autoreleased
+#endif
             } else {
                 PyErr_SetString(PyExc_ValueError, "Your version of macOS is too old to use symbol images, need >= 11.0"); return NULL;
             }
